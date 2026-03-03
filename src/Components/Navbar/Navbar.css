@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 8%;
+    width: 100%;
+    background: none; 
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 0px;
+}
+
+.navbar > img:first-of-type {
+    width: 120px; 
+    height: auto;
+    flex-shrink: 0;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 40px; 
+    font-size: 18px;
+}
+
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.nav-menu li img {
+    width: 30px !important;
+    height: auto;
+}
+
+.nav-connect {
+    padding: 12px 25px;
+    border-radius: 40px;
+    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
+    font-size: 17px;
+    cursor: pointer;
+    color: white;
+    flex-shrink: 0;
+}
+
+.anchor-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-mob-open {
+    display: none;
+    width: 30px;
+    cursor: pointer;
+}
+
+.nav-mob-close {
+    display: none;
+    width: 25px !important;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 20px 5%;
+    }
+    .nav-menu {
+        gap: 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 850px) {
+    .nav-connect {
+        display: none;
+    }
+
+    .nav-mob-open {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0; 
+        transform: translateX(100%); 
+        visibility: hidden; 
+        transition: transform 0.4s ease-in-out, visibility 0.4s;
+        z-index: 2000;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        background-color: #1f0016;
+        width: 280px; 
+        max-width: 80vw; 
+        height: 100vh;
+        padding: 100px 40px;
+        box-shadow: -10px 0px 30px rgba(0,0,0,0.5);
+    }
+
+    .nav-menu.nav-menu-open {
+        transform: translateX(0); 
+        visibility: visible;
+    }
+
+    .nav-mob-close {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+}
+
+@media (max-width: 375px) {
+    .navbar {
+        padding: 15px 20px; 
+    }
+    
+    .navbar > img:first-of-type {
+        width: 100px; 
+    }
+
+    .nav-mob-open {
+        width: 26px; 
+    }
+}

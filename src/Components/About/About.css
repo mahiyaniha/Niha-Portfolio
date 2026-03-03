@@ -1,0 +1,141 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    /* Changed fixed margins to a percentage-based padding for responsiveness */
+    padding: 80px 10%; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-title {
+    position: relative;
+    text-align: center;
+}
+
+.about-title h1 {
+    padding: 0px 30px;
+    /* Fluid typography: scales between 35px and 60px */
+    font-size: clamp(35px, 7vw, 60px); 
+    font-weight: 600;
+}
+
+.about-title img {
+    position: absolute;
+    bottom: -10px; /* Adjusted to sit better under text */
+    right: 0;
+    z-index: -1;
+    width: clamp(100px, 20vw, 160px); /* Pattern scales with screen */
+}
+
+.about-sections {
+    display: flex;
+    gap: 80px;
+    width: 100%;
+}
+
+.about-left img {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Reduced gap from 80px for better flow */
+}
+
+.about-para {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: clamp(16px, 2vw, 20px); /* Fluid text size */
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.about-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.about-skill {
+    display: flex;
+    gap: 20px; /* Reduced gap for mobile compatibility */
+    align-items: center;
+    transition: 0.3s;
+}
+
+.about-skill p {
+    min-width: 120px; /* Slightly smaller for mobile */
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: 500;
+}
+
+.about-skill hr {
+    outline: none;
+    border: none;
+    height: 8px;
+    border-radius: 50px;
+    background: linear-gradient(264deg, #df8908 -5.09%, #b415ff 106.28%);
+    /* width is handled by inline styles in JSX */
+}
+
+.about-skill:hover {
+    transform: scale(1.05);
+}
+
+/* ================= RESPONSIVE BREAKPOINTS ================= */
+
+/* Tablet & iPad */
+@media (max-width: 1024px) {
+    .about {
+        padding: 60px 5%;
+        gap: 50px;
+    }
+    .about-sections {
+        gap: 40px;
+    }
+    .about-left img {
+        width: 250px;
+    }
+}
+
+/* Mobile Devices (Laptops/Tablets portrait to Phones) */
+@media (max-width: 768px) {
+    .about {
+        padding: 10px 5% 40px 5%; 
+        gap: 30px;
+    }
+    .about-title h1 {
+        font-size: 32px; 
+        padding: 0px 10px;
+    }
+    .about-sections {
+        flex-direction: column; /* Stacks image on top of text */
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-left img {
+        width: 200px; /* Smaller profile pic on mobile */
+    }
+
+    .about-skill {
+        gap: 15px;
+    }
+
+    .about-skill p {
+        min-width: 100px;
+    }
+    
+    .about-skill hr {
+        height: 6px; /* Slightly thinner lines on mobile */
+    }
+}

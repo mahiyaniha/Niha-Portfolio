@@ -1,0 +1,109 @@
+.hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+    width: 100%;
+    max-width: 100%; 
+    padding: 100px 20px 50px 20px; 
+    overflow: hidden; 
+}
+.hero img{
+    width: 250px;        
+    height: 250px;
+    border-radius: 50%;    
+    object-fit: cover;   
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.hero h1{
+    text-align: center;
+    width: 70%;
+    font-size: 40px;
+    font-weight: 600;
+}
+.hero h1 span{
+    background: linear-gradient(270deg,#df8908 10%,#b415ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero p{
+    width: 50%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 40px;
+}
+.hero-action{
+    display:flex;
+    align-items:center;
+    gap: 25px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.hero-connect{
+    padding: 25px 25px;
+    border-radius: 50px;
+    background: linear-gradient(264deg,#df8909 -5.09%, #b415ff 102.06%);
+    cursor: pointer;
+}
+.hero-connect:hover{
+    border:2px solid #fff;
+}
+
+@media (max-width: 1024px) {
+    .hero h1 {
+        width: 90%;
+    }
+    .hero p {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        gap: 20px;
+        padding-top: 20px; 
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero h1, .hero p {
+        width: 90%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero h1 {
+        font-size: 20px; 
+        width: 90%; 
+        line-height: 1.2;
+    }
+    .hero p {
+        font-size: 12px; 
+        width: 85%;
+        line-height: 28px; 
+    }
+
+    .hero-action {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .hero-connect {
+        width: 80%; 
+        max-width: 300px; 
+        text-align: center;
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+}
